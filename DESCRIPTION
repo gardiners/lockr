@@ -1,0 +1,15 @@
+Type: Package
+Package: lockr
+Title: An R interace to the REDCap Locking API
+Version: 0.1.0
+Author: Sam Gardiner
+Maintainer: Sam Gardiner <sam.gardiner@gmail.com>
+Description: Provides R bindings for the REDCap Locking API, an external module
+    for REDCap. Supports locking and unlocking records and instruments, as well 
+    as querying locking status.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
