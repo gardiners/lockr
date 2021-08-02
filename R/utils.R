@@ -1,6 +1,15 @@
 make_url <- function(redcap_uri, action = c("status", "lock", "unlock")) {
   action <- match.arg(action)
   base_uri <- httr::parse_url(redcap_uri)
+
+  if(is.null(base_uri$scheme) | is.null(base_uri$host)) {
+    stop("Problem with redcap_uri: both protocol and hostname must be specified.")
+  }
+
+  if(base_uri$path == "") {
+    warning("redcap_uri should have the form https://foo.bar/api/")
+  }
+
   query <- list(
     NOAUTH = "",
     type = "module",
