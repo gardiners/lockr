@@ -1,4 +1,3 @@
-
 data_action <- function(record, event = NULL, instrument = NULL, instance = NULL,
                         arm = NULL, action, redcap_uri, token) {
 
