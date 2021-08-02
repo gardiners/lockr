@@ -11,8 +11,6 @@ request <- function(target, payload){
     stop(err_message)
   }
 
-  # httr::stop_for_status(response)
-
   httr::content(response, type = "application/json")
 }
 

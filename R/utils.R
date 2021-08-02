@@ -23,14 +23,7 @@ record_payload <- function(token, record){
 }
 
 data_payload <- function(token, record, event, instrument, instance, arm) {
-  list(
-    token = token,
-    record = record,
-    event = event,
-    instrument = instrument,
-    instance = instance,
-    arm = arm,
-    returnFormat = "json",
-    lock_record_level = "false"
-  )
+  elements <- c(purrr::compact(as.list(environment())),
+                list(returnFormat = "json"))
+  purrr::cross(elements)
 }
